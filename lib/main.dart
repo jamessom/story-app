@@ -35,17 +35,31 @@ class _MyAppState extends State<MyApp> {
           children: <Widget>[menuIcon, menuSearch],
         ));
 
+    const mainTitle = Text(
+      "Treding",
+      style: TextStyle(
+          color: Colors.white,
+          fontSize: 46.0,
+          fontFamily: "Calibre-Semibold",
+          letterSpacing: 1.0),
+    );
+
+    const mainTitleOptionIcon = IconButton(
+      icon: Icon(CustomIcons.option, color: Colors.white, size: 12.0),
+      onPressed: null,
+    );
+
+    var mainTitleElements = Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[mainTitle, mainTitleOptionIcon],
+      ),
+    );
+
     var bodyContent = SingleChildScrollView(
       child: Column(
-        children: <Widget>[
-          topBarElements,
-          Padding(
-              padding: topBarPaddingEdgeInsets,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[menuIcon, menuSearch],
-              )),
-        ],
+        children: <Widget>[topBarElements, mainTitleElements],
       ),
     );
 
